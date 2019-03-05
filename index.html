@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitch Emote Resizer</title>
+  <link rel="stylesheet" type="text/css" href="./app.css">
+</head>
+<body>
+  <div class="content">
+    <h1>Twitch Emote Resizer</h1>
+    <p>
+      <span style="font-weight: bold;">Drag a PNG image anywhere on this page and it will resize the image into the three sizes Twitch requires for emotes.</span> All image processing is done client-side, no image data is ever sent anywhere else.
+    </p>
+    <img id="source"/>
+    28x28:<br/>
+    <canvas id="c28" width="28" height="28"></canvas><br/>
+    56x56:<br/>
+    <canvas id="c56" width="56" height="56"></canvas><br/>
+    112x112:<br/>
+    <canvas id="c112" width="112" height="112"></canvas><br/>
+  </div>
+  <script type="text/javascript" src="https://unpkg.com/pica/dist/pica.min.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
