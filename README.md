@@ -1,4 +1,4 @@
 # twitch-emote-resizer
-Quick way of resizing PNGs to Twitch emote sizes.
+Quick and easy way to resize PNGs to Twitch emote sizes online with your browser.
 ## How do I use this?
 You can access the live version of this project at https://tma02.github.io/twitch-emote-resizer/
