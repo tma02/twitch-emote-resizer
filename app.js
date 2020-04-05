@@ -8,6 +8,9 @@ var canvases = [
   document.querySelector('#c28'),
   document.querySelector('#c56'),
   document.querySelector('#c112'),
+  document.querySelector('#c18'),
+  document.querySelector('#c36'),
+  document.querySelector('#c72'),
 ];
 
 function download(buttonId, imageId, scale) {
