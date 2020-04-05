@@ -11,11 +11,14 @@
       <span style="font-weight: bold;">Drag an image anywhere on this page and it will resize the image into the three sizes Twitch requires for emotes. You can right-click the resized images to download them as a PNG.</span> All image processing is done client-side, no image data is ever sent anywhere else.
     </p>
     <img id="source"/>
-    28x28:<br/>
+    28x28: <a id="down28" download="image28.png"><button type="button" onClick="download('down28', 'c28', '28')">Download</button></a>
+    <br/>
     <canvas id="c28" width="28" height="28"></canvas><br/>
-    56x56:<br/>
+    56x56: <a id="down56" download="image56.png"><button type="button" onClick="download('down56', 'c56', '56')">Download</button></a>
+    <br/>
     <canvas id="c56" width="56" height="56"></canvas><br/>
-    112x112:<br/>
+    112x112: <a id="down112" download="image112.png"><button type="button" onClick="download('down112', 'c112', '112')">Download</button></a>
+    <br/>
     <canvas id="c112" width="112" height="112"></canvas><br/>
   </div>
   <script type="text/javascript" src="https://unpkg.com/pica/dist/pica.min.js"></script>
