@@ -15,13 +15,16 @@ var canvases = [
 var imageDataHeader = 'data:image/png;base64,';
 var quantizerOpts = [
   {
+    colors: Math.pow(2, 7),
+  },
+  {
     colors: Math.pow(2, 8),
   },
   {
-    colors: Math.pow(2, 12),
+    colors: Math.pow(2, 10),
   },
   {
-    colors: Math.pow(2, 16),
+    colors: Math.pow(2, 12),
   }
 ];
 
@@ -43,26 +46,26 @@ sourceImg.addEventListener('load', () => {
   if (sourceImg.width * sourceImg.height > 2000 * 2000) {
     alert('This source image is very large, and may take awhile to process. Please dismiss this alert if you would like to continue.');
   }
-  var quantizers = [];
-  for (var opt in quantizerOpts) {
-    quantizers[opt] = new RgbQuant(quantizerOpts[opt]);
-    quantizers[opt].sample(sourceImg);
-  }
   canvases.forEach((e) => {
     pica.resize(sourceImg, e, {
       quality: 3,
       alpha: true,
     }).then(() => {
-      // approx. size of b64 string
       var compressed = false;
+      // approx. size of b64 string
       e.uncompressedSize = Math.round((e.toDataURL('image/png').length - imageDataHeader.length) * (3/4));
-      while (e.uncompressedSize > 25000 && quantizers.length > 0) {
+      var opt = quantizerOpts.length - 1;
+      while (e.uncompressedSize > 25000 && opt >= 0) {
         var ctx = e.getContext('2d');
+        var resizedPointContainer = window['image-q'].utils.PointContainer.fromHTMLCanvasElement(e);
+        palette = window['image-q'].buildPaletteSync([resizedPointContainer], quantizerOpts[opt]);
         var imageData = ctx.createImageData(e.width, e.height);
-        imageData.data.set(quantizers.pop().reduce(e));
+        imageData.data.set(window['image-q'].applyPaletteSync(resizedPointContainer, palette).toUint8Array());
         ctx.putImageData(imageData, 0, 0);
         compressed = true;
         e.uncompressedSize = Math.round((e.toDataURL('image/png').length - imageDataHeader.length) * (3/4));
+        console.log(e.uncompressedSize);
+        opt--;
       }
       e.size = Math.round((e.toDataURL('image/png').length - imageDataHeader.length) * (3/4));
       document.getElementById(`size${e.width}`).innerText = `(${bytesToKB(e.size).toFixed(2)} KB${compressed ? ', compressed' : ''})`;
