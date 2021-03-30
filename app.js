@@ -15,6 +15,12 @@ var canvases = [
 var imageDataHeader = 'data:image/png;base64,';
 var quantizerOpts = [
   {
+    colors: Math.pow(2, 5),
+  },
+  {
+    colors: Math.pow(2, 6),
+  },
+  {
     colors: Math.pow(2, 7),
   },
   {
