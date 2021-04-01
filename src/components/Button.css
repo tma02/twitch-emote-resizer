@@ -1,0 +1,19 @@
+.Button {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: all var(--transition-time);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.Button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.Button:active {
+    transform: scale(0.96);
+}
