@@ -1,0 +1,43 @@
+.App {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.Info {
+    font-size: 0.8rem;
+    color: var(--white-10);
+    display: flex;
+    width: 100%;
+    text-align: left;
+    justify-content: center;
+}
+
+.InfoIcon {
+    /* https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(93%) sepia(6%) saturate(182%) hue-rotate(202deg) brightness(86%) contrast(91%);
+    margin: 1rem 1rem 1rem 0;
+}
+
+.GitHub {
+    display: flex;
+    cursor: pointer;
+    color: var(--white-10);
+    text-decoration: underline;
+}
+
+.GitHubIcon {
+    filter: invert(93%) sepia(6%) saturate(182%) hue-rotate(202deg) brightness(86%) contrast(91%);
+    margin: 0 1rem 0 0;
+    height: 1.5rem;
+}
+
+.Spacer {
+    height: 4rem;
+}

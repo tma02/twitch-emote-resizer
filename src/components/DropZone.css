@@ -1,0 +1,82 @@
+.DropZone {
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 450px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.LoadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 4rem);
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    padding: 0 2rem;
+    transition: all var(--transition-time);
+}
+
+.DropZone.Loading > .LoadingContainer {
+    opacity: 1;
+}
+
+.DropCallToAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all var(--transition-time);
+    z-index: 100;
+}
+
+.DropZone.Loading > .DropCallToAction, .DropZone.Done > .DropCallToAction {
+    opacity: 0;
+    pointer-events: none;
+    z-index: initial;
+}
+
+.ResizedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transition: all var(--transition-time);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.DropZone.Done > .ResizedContainer {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.ResizedRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.ResizedRow > div {
+    text-align: center;
+    align-self: end;
+}
+
+.ImageSize {
+    color: var(--white-10);
+    font-size: 0.8rem;
+}
+
+.SourceImage {
+    display: none;
+}

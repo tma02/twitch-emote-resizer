@@ -1,0 +1,9 @@
+{
+  "short_name": "Twitch Emote Resizer",
+  "name": "Twitch Emote Resizer",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#c9c9d0",
+  "background_color": "#18181f"
+}
