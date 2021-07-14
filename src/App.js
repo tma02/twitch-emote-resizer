@@ -22,7 +22,7 @@ function App() {
         </p>
       </div>
       <div className="GitHub" onClick={handleViewOnGithub}>
-        <img src={github} className="GitHubIcon"/>
+        <img src={github} className="GitHubIcon" alt="GitHub icon"/>
         View on GitHub
       </div>
       <div className="Spacer"/>

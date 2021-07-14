@@ -16,6 +16,7 @@ function DropZone() {
 
   const fileInputRef = useRef(null);
   const sourceImageRef = useRef(null);
+  const sourceImageCanvasRef = useRef(null);
 
   const canvasRefs = [];
   const resized28Ref = useRef(null);
@@ -70,13 +71,24 @@ function DropZone() {
     }
   };
   const handleImageLoad = e => {
+    // Preserve aspect ratio
+    let naturalWidth = sourceImageRef.current.naturalWidth;
+    let naturalHeight = sourceImageRef.current.naturalHeight;
+    let maxSideLength = Math.max(naturalWidth, naturalHeight);
+    sourceImageCanvasRef.current.width = maxSideLength;
+    sourceImageCanvasRef.current.height = maxSideLength;
+    let sourceImageCanvasContext = sourceImageCanvasRef.current.getContext('2d');
+    let widthOffset = Math.round((maxSideLength - naturalWidth) / 2);
+    let heightOffset = Math.round((maxSideLength - naturalHeight) / 2);
+    sourceImageCanvasContext.drawImage(sourceImageRef.current, widthOffset, heightOffset);
+    // Resize
     let resized = 0;
     let withinSize = 0;
     setProgress(10);
     setLoadingText(`Resizing image... (${resized}/${canvasRefs.length})`);
     const pica = new Pica();
     for (let canvasRef of canvasRefs) {
-      pica.resize(sourceImageRef.current, canvasRef.current, {
+      pica.resize(sourceImageCanvasRef.current, canvasRef.current, {
         quality: 3,
         alpha: true,
       }).then(() => {
@@ -145,7 +157,8 @@ function DropZone() {
          onDragLeave={handleDragLeave}
          onDragOver={handleDragOver}
     >
-      <img className="SourceImage" src={sourceImageUrl} ref={sourceImageRef} onLoad={handleImageLoad} />
+      <img className="SourceImage" src={sourceImageUrl} ref={sourceImageRef} onLoad={handleImageLoad} alt="Source"/>
+      <canvas className="SourceImage" ref={sourceImageCanvasRef}/>
       <input id="ImageInput"
              type="file"
              accept="image/*"

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/twitch-emote-resizer/static/css/main.46b4d698.chunk.css",
-    "main.js": "/twitch-emote-resizer/static/js/main.4cfce757.chunk.js",
-    "main.js.map": "/twitch-emote-resizer/static/js/main.4cfce757.chunk.js.map",
+    "main.js": "/twitch-emote-resizer/static/js/main.31786bdd.chunk.js",
+    "main.js.map": "/twitch-emote-resizer/static/js/main.31786bdd.chunk.js.map",
     "runtime-main.js": "/twitch-emote-resizer/static/js/runtime-main.42b8343a.js",
     "runtime-main.js.map": "/twitch-emote-resizer/static/js/runtime-main.42b8343a.js.map",
     "static/js/2.7db588bd.chunk.js": "/twitch-emote-resizer/static/js/2.7db588bd.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.42b8343a.js",
     "static/js/2.7db588bd.chunk.js",
     "static/css/main.46b4d698.chunk.css",
-    "static/js/main.4cfce757.chunk.js"
+    "static/js/main.31786bdd.chunk.js"
   ]
 }
