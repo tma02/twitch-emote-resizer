@@ -1,13 +1,31 @@
 .App {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
-    padding: 0 3rem;
+    padding: 0 1rem;
     text-align: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+}
+
+.TitleRow {
+    display: flex;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+.TitleRow > *:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.Icon {
+    width: 1.6rem;
+}
+
+.Title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.15rem;
 }
 
 .Info {
@@ -16,7 +34,7 @@
     display: flex;
     width: 100%;
     text-align: left;
-    justify-content: center;
+    font-weight: 500;
 }
 
 .InfoIcon {
@@ -39,5 +57,5 @@
 }
 
 .Spacer {
-    height: 4rem;
+    height: 6rem;
 }
