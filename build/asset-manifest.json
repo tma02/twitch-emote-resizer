@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/twitch-emote-resizer/static/css/main.46b4d698.chunk.css",
-    "main.js": "/twitch-emote-resizer/static/js/main.31786bdd.chunk.js",
-    "main.js.map": "/twitch-emote-resizer/static/js/main.31786bdd.chunk.js.map",
+    "main.css": "/twitch-emote-resizer/static/css/main.1adc9d37.chunk.css",
+    "main.js": "/twitch-emote-resizer/static/js/main.f5cc7682.chunk.js",
+    "main.js.map": "/twitch-emote-resizer/static/js/main.f5cc7682.chunk.js.map",
     "runtime-main.js": "/twitch-emote-resizer/static/js/runtime-main.42b8343a.js",
     "runtime-main.js.map": "/twitch-emote-resizer/static/js/runtime-main.42b8343a.js.map",
     "static/js/2.7db588bd.chunk.js": "/twitch-emote-resizer/static/js/2.7db588bd.chunk.js",
@@ -10,15 +10,16 @@
     "static/js/3.cf45c4f4.chunk.js": "/twitch-emote-resizer/static/js/3.cf45c4f4.chunk.js",
     "static/js/3.cf45c4f4.chunk.js.map": "/twitch-emote-resizer/static/js/3.cf45c4f4.chunk.js.map",
     "index.html": "/twitch-emote-resizer/index.html",
-    "static/css/main.46b4d698.chunk.css.map": "/twitch-emote-resizer/static/css/main.46b4d698.chunk.css.map",
+    "static/css/main.1adc9d37.chunk.css.map": "/twitch-emote-resizer/static/css/main.1adc9d37.chunk.css.map",
     "static/js/2.7db588bd.chunk.js.LICENSE.txt": "/twitch-emote-resizer/static/js/2.7db588bd.chunk.js.LICENSE.txt",
     "static/media/github.16a9304e.svg": "/twitch-emote-resizer/static/media/github.16a9304e.svg",
-    "static/media/info.ebce7ea8.svg": "/twitch-emote-resizer/static/media/info.ebce7ea8.svg"
+    "static/media/info.ebce7ea8.svg": "/twitch-emote-resizer/static/media/info.ebce7ea8.svg",
+    "static/media/twitch-emote-resizer.a6e15172.svg": "/twitch-emote-resizer/static/media/twitch-emote-resizer.a6e15172.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.42b8343a.js",
     "static/js/2.7db588bd.chunk.js",
-    "static/css/main.46b4d698.chunk.css",
-    "static/js/main.31786bdd.chunk.js"
+    "static/css/main.1adc9d37.chunk.css",
+    "static/js/main.f5cc7682.chunk.js"
   ]
 }
