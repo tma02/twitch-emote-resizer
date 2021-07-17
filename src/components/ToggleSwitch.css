@@ -1,0 +1,22 @@
+.ToggleSwitch {
+    height: 1rem;
+    width: 2rem;
+    border-radius: 1rem;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+}
+.ToggleSwitch.Light {
+
+}
+
+.ToggleSwitch > .Inner {
+    border: 0.4rem solid;
+    width: 0;
+    border-radius: 1rem;
+    transform: translateX(0.1rem);
+    transition: transform var(--transition-time);
+}
+.ToggleSwitch.On > .Inner {
+    transform: translateX(1.1rem);
+}

@@ -6,6 +6,7 @@ import Pica from 'pica';
 import * as iq from 'image-q';
 import JSZip from "jszip";
 import { saveAs } from 'file-saver';
+import TwitchPreview from "./TwitchPreview";
 
 function DropZone() {
   const [draggingFile, setDraggingFile] = useState(false);
@@ -13,6 +14,8 @@ function DropZone() {
   const [loadingText, setLoadingText] = useState('');
   const [sourceImageUrl, setSourceImageUrl] = useState('');
   const [fileName, setFileName] = useState('');
+  const [emotePreviewDataUrl, setEmotePreviewDataUrl] = useState('')
+  const [badgePreviewDataUrl, setBadgePreviewDataUrl] = useState('');
 
   const fileInputRef = useRef(null);
   const sourceImageRef = useRef(null);
@@ -124,6 +127,12 @@ function DropZone() {
         else {
           withinSize += 1;
           setProgress(10 + ((resized / canvasRefs.length) * 70) + ((withinSize / canvasRefs.length) * 20));
+          if (canvasRef.current.width === 112) {
+            setEmotePreviewDataUrl(canvasRef.current.toDataURL());
+          }
+          else if (canvasRef.current.width === 72) {
+            setBadgePreviewDataUrl(canvasRef.current.toDataURL());
+          }
         }
       });
     }
@@ -175,6 +184,7 @@ function DropZone() {
         <ProgressBar progress={progress} />
       </div>
       <div className="ResizedContainer">
+        <TwitchPreview emoteDataUrl={emotePreviewDataUrl} badgeDataUrl={badgePreviewDataUrl} />
         <div className="ResizedRow">
           <div onClick={() => handleSaveImage(resized112Ref)} style={{ cursor: 'pointer' }}>
             <canvas className="ResizedCanvas By112" width="112" height="112" ref={resized112Ref}/>

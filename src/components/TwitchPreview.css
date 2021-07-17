@@ -1,0 +1,59 @@
+.TwitchPreview {
+    height: 38px;
+    background-color: #18181b;
+    width: 320px;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+    padding: 0 0.7rem;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color var(--transition-time), background-color var(--transition-time);
+    color: rgb(239, 239, 241);
+}
+.TwitchPreview.Light {
+    background-color: rgb(247, 247, 248);
+    color: rgb(14, 14, 16);
+}
+.TwitchPreview.Light > * > * > .Username {
+    color: rgb(0, 128, 99);
+}
+
+.ChatMessage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.Username {
+    color: rgb(50, 195, 162);
+    transition: color var(--transition-time);
+}
+
+.EmotePreview {
+    width: 28px;
+    margin-left: 0.4rem;
+}
+
+.BadgePreview {
+    width: 18px;
+    margin-right: 0.3rem;
+}
+
+.DarkToggle {
+    display: flex;
+    align-items: center;
+}
+
+.MoonIcon {
+    margin-right: 0.4rem;
+    height: 1.2rem;
+    transition: filter var(--transition-time);
+    filter: invert(81%) sepia(13%) saturate(18%) hue-rotate(202deg) brightness(113%) contrast(99%);
+}
+.MoonIcon.Light {
+    filter: invert(3%) sepia(4%) saturate(2297%) hue-rotate(201deg) brightness(95%) contrast(94%);
+}
