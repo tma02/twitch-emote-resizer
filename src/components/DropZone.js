@@ -118,6 +118,12 @@ function DropZone() {
               withinSize += 1;
               setProgress(10 + ((resized / canvasRefs.length) * 70) + ((withinSize / canvasRefs.length) * 20));
             }
+            if (canvasRef.current.width === 112) {
+              setEmotePreviewDataUrl(canvasRef.current.toDataURL());
+            }
+            else if (canvasRef.current.width === 72) {
+              setBadgePreviewDataUrl(canvasRef.current.toDataURL());
+            }
           });
         }
 
