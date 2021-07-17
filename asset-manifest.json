@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/twitch-emote-resizer/static/css/main.8655a688.chunk.css",
+    "main.js": "/twitch-emote-resizer/static/js/main.5cbcf42c.chunk.js",
+    "main.js.map": "/twitch-emote-resizer/static/js/main.5cbcf42c.chunk.js.map",
+    "runtime-main.js": "/twitch-emote-resizer/static/js/runtime-main.6ce08ab7.js",
+    "runtime-main.js.map": "/twitch-emote-resizer/static/js/runtime-main.6ce08ab7.js.map",
+    "static/js/2.ee0924d8.chunk.js": "/twitch-emote-resizer/static/js/2.ee0924d8.chunk.js",
+    "static/js/2.ee0924d8.chunk.js.map": "/twitch-emote-resizer/static/js/2.ee0924d8.chunk.js.map",
+    "static/js/3.0b4d4f67.chunk.js": "/twitch-emote-resizer/static/js/3.0b4d4f67.chunk.js",
+    "static/js/3.0b4d4f67.chunk.js.map": "/twitch-emote-resizer/static/js/3.0b4d4f67.chunk.js.map",
+    "index.html": "/twitch-emote-resizer/index.html",
+    "static/css/main.8655a688.chunk.css.map": "/twitch-emote-resizer/static/css/main.8655a688.chunk.css.map",
+    "static/js/2.ee0924d8.chunk.js.LICENSE.txt": "/twitch-emote-resizer/static/js/2.ee0924d8.chunk.js.LICENSE.txt",
+    "static/media/github.16a9304e.svg": "/twitch-emote-resizer/static/media/github.16a9304e.svg",
+    "static/media/info.ebce7ea8.svg": "/twitch-emote-resizer/static/media/info.ebce7ea8.svg",
+    "static/media/moon.a82cae44.svg": "/twitch-emote-resizer/static/media/moon.a82cae44.svg",
+    "static/media/twitch-emote-resizer.a6e15172.svg": "/twitch-emote-resizer/static/media/twitch-emote-resizer.a6e15172.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ce08ab7.js",
+    "static/js/2.ee0924d8.chunk.js",
+    "static/css/main.8655a688.chunk.css",
+    "static/js/main.5cbcf42c.chunk.js"
+  ]
+}
