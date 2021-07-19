@@ -5,7 +5,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 0.4rem;
-    transition: background-color 0, all var(--transition-time);
+    transition: background-color 0s, box-shadow var(--transition-time);
     box-shadow: 0 0 0 2px rgba(0,0,0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
     margin: 0.8rem;
     user-select: none;
