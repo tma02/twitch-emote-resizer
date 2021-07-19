@@ -1,19 +1,20 @@
 .Button {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 1rem;
+    background-color: rgba(83,82,131, 0.5);
+    padding: 0.2rem 1.3rem;
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 3px;
-    transition: all var(--transition-time);
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+    transition: background-color 0, all var(--transition-time);
+    box-shadow: 0 0 0 2px rgba(0,0,0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    margin: 0.8rem;
     user-select: none;
 }
 
 .Button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 4px rgba(0,0,0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .Button:active {
-    transform: scale(0.96);
+    background-color: rgba(83,82,131, 1);
 }

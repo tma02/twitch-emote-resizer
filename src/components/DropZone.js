@@ -7,6 +7,8 @@ import * as iq from 'image-q';
 import JSZip from "jszip";
 import { saveAs } from 'file-saver';
 import TwitchPreview from "./TwitchPreview";
+import image from "../image.svg";
+import ResizedImage from "./ResizedImage";
 
 function DropZone() {
   const [draggingFile, setDraggingFile] = useState(false);
@@ -161,9 +163,12 @@ function DropZone() {
       saveAs(blob, `${fileName}@${canvasRef.current.width}.png`);
     });
   };
+  const handleClear = () => {
+    window.location.reload();
+  };
   return (
     <div className={
-      'DropZone' + (draggingFile ? ' Dragging' : '')
+      'DropZone ' + (draggingFile ? ' Dragging' : '')
       + (progress > 0 && progress < 100 ? ' Loading' : '')
       + (progress === 100 ? ' Done' : '')
     }
@@ -182,8 +187,10 @@ function DropZone() {
              onChange={handleChangeFile}
       />
       <div className="DropCallToAction">
-        <h2>Drop your image here or </h2>
-        <Button clickHandler={handleClickChooseFile}>Choose file</Button>
+        <img src={image} className={"ImageIcon"} />
+        <h2>Drop your image here</h2>
+        <span className={"Label"}>OR</span>
+        <Button clickHandler={handleClickChooseFile}>Browse files</Button>
       </div>
       <div className="LoadingContainer">
         <h4>{loadingText}</h4>
@@ -191,37 +198,48 @@ function DropZone() {
       </div>
       <div className="ResizedContainer">
         <TwitchPreview emoteDataUrl={emotePreviewDataUrl} badgeDataUrl={badgePreviewDataUrl} />
+        <div className={"Label"}>EMOTES</div>
         <div className="ResizedRow">
           <div onClick={() => handleSaveImage(resized112Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By112" width="112" height="112" ref={resized112Ref}/>
-            <div className="ImageSize">112x112 ({bytesToKilobytes(estimateCanvasFileSize(resized112Ref.current))}KB)</div>
+            <ResizedImage size={112} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized112Ref.current))}>
+              <canvas className="ResizedCanvas By112" width="112" height="112" ref={resized112Ref}/>
+            </ResizedImage>
           </div>
           <div onClick={() => handleSaveImage(resized56Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By56" width="56" height="56" ref={resized56Ref}/>
-            <div className="ImageSize">56x56 ({bytesToKilobytes(estimateCanvasFileSize(resized56Ref.current))}KB)</div>
+            <ResizedImage size={56} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized56Ref.current))}>
+              <canvas className="ResizedCanvas By56" width="56" height="56" ref={resized56Ref}/>
+            </ResizedImage>
           </div>
           <div onClick={() => handleSaveImage(resized28Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By28" width="28" height="28" ref={resized28Ref}/>
-            <div className="ImageSize">28x28 ({bytesToKilobytes(estimateCanvasFileSize(resized28Ref.current))}KB)</div>
+            <ResizedImage size={28} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized28Ref.current))}>
+              <canvas className="ResizedCanvas By28" width="28" height="28" ref={resized28Ref}/>
+            </ResizedImage>
           </div>
         </div>
+        <div className={"Label"}>BADGES</div>
         <div className="ResizedRow">
           <div onClick={() => handleSaveImage(resized72Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By72" width="72" height="72" ref={resized72Ref}/>
-            <div className="ImageSize">72x72 ({bytesToKilobytes(estimateCanvasFileSize(resized72Ref.current))}KB)</div>
+            <ResizedImage size={72} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized72Ref.current))}>
+              <canvas className="ResizedCanvas By72" width="72" height="72" ref={resized72Ref}/>
+            </ResizedImage>
           </div>
           <div onClick={() => handleSaveImage(resized36Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By36" width="36" height="36" ref={resized36Ref}/>
-            <div className="ImageSize">36x36 ({bytesToKilobytes(estimateCanvasFileSize(resized36Ref.current))}KB)</div>
+            <ResizedImage size={36} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized36Ref.current))}>
+              <canvas className="ResizedCanvas By36" width="36" height="36" ref={resized36Ref}/>
+            </ResizedImage>
           </div>
           <div onClick={() => handleSaveImage(resized18Ref)} style={{ cursor: 'pointer' }}>
-            <canvas className="ResizedCanvas By18" width="18" height="18" ref={resized18Ref}/>
-            <div className="ImageSize">18x18 ({bytesToKilobytes(estimateCanvasFileSize(resized18Ref.current))}KB)</div>
+            <ResizedImage size={18} ready={false} progressText={'Waiting...'} fileSize={bytesToKilobytes(estimateCanvasFileSize(resized18Ref.current))}>
+              <canvas className="ResizedCanvas By18" width="18" height="18" ref={resized18Ref}/>
+            </ResizedImage>
           </div>
         </div>
-        <div>
-          <p>Click an image to save it or</p>
-          <Button clickHandler={handleSaveAll}>Save all (.zip)</Button>
+        <div className={"BottomBar"}>
+          <p>You can click any of the images above to save it to your computer.</p>
+          <div className={"ButtonContainer"}>
+            <Button clickHandler={handleSaveAll}>Save all (.zip)</Button>
+            <Button clickHandler={handleClear}>Clear</Button>
+          </div>
         </div>
       </div>
     </div>

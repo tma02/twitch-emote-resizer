@@ -7,6 +7,7 @@
   --base-white: #e5e5ec;
   --white-10: #c9c9d0;
   --transition-time: 0.15s;
+  --base-white-filter: invert(93%) sepia(6%) saturate(182%) hue-rotate(202deg) brightness(86%) contrast(91%);
 }
 
 body {
