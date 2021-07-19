@@ -237,8 +237,8 @@ function DropZone() {
         <div className={"BottomBar"}>
           <p>You can click any of the images above to save it to your computer.</p>
           <div className={"ButtonContainer"}>
-            <Button clickHandler={handleSaveAll}>Save all (.zip)</Button>
             <Button clickHandler={handleClear}>Clear</Button>
+            <Button clickHandler={handleSaveAll}>Save all (.zip)</Button>
           </div>
         </div>
       </div>
